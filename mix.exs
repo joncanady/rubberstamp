@@ -19,12 +19,12 @@ defmodule Rubberstamp.Mixfile do
   def application do
     [mod: {Rubberstamp, []},
      applications: [:phoenix, :phoenix_html, :cowboy, :logger, :gettext,
-                    :phoenix_ecto, :postgrex]]
+                    :phoenix_ecto, :postgrex, :tentacat]]
   end
 
   # Specifies which paths to compile per environment.
-  defp elixirc_paths(:test), do: ["lib", "web", "test/support"]
   defp elixirc_paths(_),     do: ["lib", "web"]
+  defp elixirc_paths(:test), do: ["lib", "web", "test/support"]
 
   # Specifies your project dependencies.
   #
@@ -36,7 +36,8 @@ defmodule Rubberstamp.Mixfile do
      {:phoenix_html, "~> 2.4"},
      {:phoenix_live_reload, "~> 1.0", only: :dev},
      {:gettext, "~> 0.9"},
-     {:cowboy, "~> 1.0"}]
+     {:cowboy, "~> 1.0"},
+     {:tentacat, "~> 0.2"}]
   end
 
   # Aliases are shortcut or tasks specific to the current project.

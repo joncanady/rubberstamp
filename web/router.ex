@@ -14,9 +14,10 @@ defmodule Rubberstamp.Router do
   end
 
   scope "/", Rubberstamp do
-    pipe_through :browser # Use the default browser stack
+    pipe_through :api 
 
-    get "/", PageController, :index
+    get "/event_handler", EventController, :index
+    post "/event_handler", EventController, :update
   end
 
   # Other scopes may use custom stacks.
